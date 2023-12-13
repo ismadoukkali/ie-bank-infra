@@ -6,19 +6,19 @@
             "value": "nonprod"
         },
         "postgreSQLServerName": {
-            "value": "aguadamillas-dbsrv-dev"
+            "value": "idoukkali-dbsrv-dev"
         },
         "postgreSQLDatabaseName": {
-            "value": "aguadamillas-db-dev"
+            "value": "idoukkali-db-dev"
         },
         "appServicePlanName": {
-            "value": "aguadamillas-asp-dev"
+            "value": "idoukkali-asp-dev"
         },
         "appServiceAPIAppName": {
-            "value": "aguadamillas-be-dev"
+            "value": "idoukkali-be-dev"
         },
         "appServiceAppName": {
-            "value": "aguadamillas-fe-dev"
+            "value": "idoukkali-fe-dev"
         },
         "location": {
             "value": "North Europe"
