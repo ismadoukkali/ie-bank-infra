@@ -9,8 +9,8 @@ on:
   workflow_dispatch: # Trigger manually
 
 env:
-  RESOURCE_GROUP_DEV: idoukkali_dev
-  RESOURCE_GROUP_PROD: idoukkali_prod
+  RESOURCE_GROUP_DEV: aguadamillas_students_1
+  RESOURCE_GROUP_PROD: aguadamillas_students_2
   RESOURCE_GROUP_RETAKERS: aguadamillas_students_retakers
   SUBSCRIPTION_ID_DEV: e0b9cada-61bc-4b5a-bd7a-52c606726b3b
 
