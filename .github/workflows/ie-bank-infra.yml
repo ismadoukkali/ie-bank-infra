@@ -29,7 +29,7 @@ jobs:
     env:
       ENV: dev
       DBHOST: idoukkali-dbsrv-dev.postgres.database.azure.com
-      DBNAME: idoukkali-dbsrv-dev
+      DBNAME: idoukkali-db-dev
       FLASK_APP: app.py
       FLASK_DEBUG: 1
 
@@ -61,7 +61,7 @@ jobs:
     env:
       ENV: uat
       DBHOST: idoukkali-dbsrv-uat.postgres.database.azure.com
-      DBNAME: idoukkali-dbsrv-uat
+      DBNAME: idoukkali-db-uat
       FLASK_APP: app.py
       FLASK_DEBUG: 1
 
