@@ -11,7 +11,7 @@ param postgreSQLServerName string = 'ie-bank-db-server-dev'
 @sys.description('The PostgreSQL Database name')
 @minLength(3)
 @maxLength(24)
-param postgreSQLDatabaseName string = 'ie-bank-db'
+param postgreSQLDatabaseName string = 'ie-bank-db' // default DBNAME (but it's being overwritten by dev.parameters.json)
 @sys.description('The App Service Plan name')
 @minLength(3)
 @maxLength(24)
@@ -24,6 +24,10 @@ param appServiceAppName string = 'ie-bank-dev'
 @minLength(3)
 @maxLength(24)
 param appServiceAPIAppName string = 'ie-bank-api-dev'
+@sys.description('The name of the Azure Monitor workspace')
+param azureMonitorName string
+@sys.description('The name of the Application Insights')
+param appInsightsName string
 @sys.description('The Azure location where the resources will be deployed')
 param location string = resourceGroup().location
 @sys.description('The value for the environment variable ENV')
@@ -50,8 +54,8 @@ resource postgresSQLServer 'Microsoft.DBforPostgreSQL/flexibleServers@2022-12-01
     tier: 'Burstable'
   }
   properties: {
-    administratorLogin: 'iebankdbadmin'
-    administratorLoginPassword: 'IE.Bank.DB.Admin.Pa$$'
+    administratorLogin: 'iebankdbadmin' // DBUSER
+    administratorLoginPassword: 'IE.Bank.DB.Admin.Pa$$' // DBPASS
     createMode: 'Default'
     highAvailability: {
       mode: 'Disabled'
@@ -107,3 +111,18 @@ module appService 'modules/app-service.bicep' = {
 }
 
 output appServiceAppHostName string = appService.outputs.appServiceAppHostName
+
+resource azureMonitor 'Microsoft.OperationalInsights/workspaces@2020-08-01' = {
+  name: azureMonitorName
+  location: location
+}
+
+resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
+  name: appInsightsName
+  location: location
+  kind: 'web'
+  properties: {
+    Application_Type: 'web'
+    WorkspaceResourceId: resourceId('Microsoft.OperationalInsights/workspaces', azureMonitorName)
+  }
+}

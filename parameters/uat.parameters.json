@@ -6,25 +6,25 @@
             "value": "nonprod"
         },
         "postgreSQLServerName": {
-            "value": "idoukkali-dbsrv-dev"
+            "value": "idoukkali-dbsrv-uat"
         },
         "postgreSQLDatabaseName": {
-            "value": "idoukkali-db-dev"
+            "value": "idoukkali-db-uat"
         },
         "appServicePlanName": {
-            "value": "idoukkali-asp-dev"
+            "value": "idoukkali-asp-uat"
         },
         "appServiceAPIAppName": {
-            "value": "idoukkali-be-dev"
+            "value": "idoukkali-be-uat"
         },
         "appServiceAppName": {
-            "value": "idoukkali-fe-dev"
+            "value": "idoukkali-fe-uat"
         },
         "azureMonitorName": {
-            "value": "idoukkali-azure-monitor"
+            "value": "idoukkali-azure-monitor-uat"
         },
         "appInsightsName": {
-            "value": "idoukkali-app-insights"
+            "value": "idoukkali-app-insights-uat"
         },
         "location": {
             "value": "North Europe"
